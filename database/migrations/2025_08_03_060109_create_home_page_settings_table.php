@@ -13,31 +13,20 @@ return new class extends Migration
     {
         Schema::create('home_page_settings', function (Blueprint $table) {
             $table->id();
-
-            // Bagian Header
             $table->string('title')->nullable();
             $table->string('subtitle')->nullable();
-
-            // Bagian Tentang & Keunggulan
             $table->text('sejarah')->nullable();
             $table->string('motto')->nullable();
             $table->string('gambar_sejarah')->nullable();
-            $table->json('isi_keunggulan')->nullable(); // Menyimpan list teks
+            $table->json('isi_keunggulan')->nullable(); // Untuk menyimpan list teks
             $table->string('gambar_keunggulan')->nullable();
-
-            // Bagian Varian (Repeater)
-            $table->json('varian')->nullable(); // Menyimpan grup jenis, deskripsi, gambar
-
-            // Bagian Gallery
-            $table->json('gallery_potrait')->nullable(); // Menyimpan banyak foto
-            $table->json('gallery_landscape')->nullable(); // Menyimpan banyak foto
-
-            // Bagian Kontak
+            $table->json('varian')->nullable(); // Untuk menyimpan grup jenis, deskripsi, gambar
+            $table->json('gallery_potrait')->nullable(); // Untuk menyimpan banyak foto
+            $table->json('gallery_landscape')->nullable(); // Untuk menyimpan banyak foto
             $table->string('username_ig')->nullable();
             $table->string('nomor_wa')->nullable();
             $table->string('gmail')->nullable();
             $table->text('link_maps')->nullable(); // Untuk kode embed yang panjang
-
             $table->timestamps();
         });
     }
